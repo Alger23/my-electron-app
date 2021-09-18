@@ -39,5 +39,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "electron": "^14.0.1",
+    "electron-builder": "^22.11.7",
+    "wait-on": "^6.0.0"
   }
 }
