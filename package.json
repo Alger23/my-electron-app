@@ -1,6 +1,13 @@
 {
   "name": "my-electron-app",
   "version": "0.1.0",
+  "description": "Electron app sample",
+  "author": "Alger Chen <alger.chen23@gmail.com>",
+  "build": {
+    "appId": "electron.sample.tw"
+  },
+  "main": "public/electron.js",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
