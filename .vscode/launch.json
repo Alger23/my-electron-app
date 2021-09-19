@@ -1,0 +1,51 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Electron: Main Process",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+            "runtimeArgs": [
+                ".",
+                "--inspect=5858",
+                "--remote-debugging-port=9223"
+            ],
+            "env": {
+                "PORT": "3003"
+            },
+            "windows": {
+                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+            },
+            "protocol": "legacy",
+            "program": "${workspaceFolder}/public/electron.js"
+        },
+        {
+            "name": "Electron: Renderer process",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/react-scripts",
+            "args": [
+                "start",
+            ],
+            "cwd": "${workspaceFolder}",
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "env": {
+                "BROWSER": "none",
+                "PORT": "3003",
+               // "BROWSER_ARGS":"--remote-debugging-port=9223"
+            },
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Electron: All",
+            "configurations": [
+                "Electron: Main Process",
+                "Electron: Renderer process"
+            ]
+        }
+    ]
+}
